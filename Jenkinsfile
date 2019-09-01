@@ -40,16 +40,20 @@ pipeline {
                  }
                  }
                  stage('Four') {
-                 parallel {( 
-                           steps {
+                 parallel  route_1 : { 
+                           stage ( ' task1 ')
+                             {
                                 echo "Running the unit test..."
                            }
-                                    
-                              steps {
+                                }
+                       
+                            route_2 {
+                             stage ('task 2')
+                              {
                                 echo "Running the integration test..."
                               }
-                            )
-                           }
+                            
+                            }
                              
                            }
                            }
