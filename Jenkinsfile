@@ -13,16 +13,22 @@ pipeline {
                      parameters: [choice(name: 'GO or no go today ', choices: 'YES\nNO', \
                       description: 'Choose "yes" if we get signed off from manager')]
                        } 
-                 
-                 steps 
-            when {
+                     }
+                   }
+
+                stage ('Two-sub-1') 
+                  {
+                  agent none
+      when {
         environment name: 'GO_or_NO_GO', value: 'YES'
-              }
-                script {
-                    echo " we are going next steps "
-                } 
-                 }
-                 }
+      }
+      // test of mxu
+      steps {
+        echo "next step: go on "
+       // echo "${env.mxx_var1}"
+      }
+                     }
+
                  stage('Three') {
                  when {
                        not {
