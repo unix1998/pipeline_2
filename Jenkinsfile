@@ -8,7 +8,6 @@ pipeline {
                  }
                  stage('Two') {
                  steps {
-                    input('Do you want to proceed?')
                     script {
                      env.GO_or_NO_GO = input message: 'User input required',
                      parameters: [choice(name: 'GO or no go today ', choices: 'YES\nNO', \
