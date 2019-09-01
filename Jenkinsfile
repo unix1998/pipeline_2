@@ -14,9 +14,10 @@ pipeline {
                       description: 'Choose "yes" if we get signed off from manager')]
                        } 
                  
-                 steps          when {
+                 steps 
+            when {
         environment name: 'GO_or_NO_GO', value: 'YES'
-      }
+              }
                 script {
                     echo " we are going next steps "
                 } 
