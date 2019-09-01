@@ -40,20 +40,16 @@ pipeline {
                  }
                  }
                  stage('Four') {
-                 parallel { 
+                 parallel {( 
                            steps {
                                 echo "Running the unit test..."
                            }
-                             // agent none
-                                    //docker {
-                                            reuseNode true
-                                      //      image 'ubuntu'
-                                        //   }
                                     
                               steps {
                                 echo "Running the integration test..."
                               }
                            }
+                             )
                            }
                            }
 }
