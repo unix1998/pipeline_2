@@ -8,10 +8,11 @@ pipeline {
         }
         stage('Example Deploy') {
             when {
-                branch 'production'
+                branch 'lab'
             }
             steps {
                 echo 'Deploying'
+                echo ' in lab '
             }
         }
     }
