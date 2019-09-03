@@ -16,7 +16,7 @@ pipeline {
             steps {
                 echo 'Deploying'
                 echo ' in lab '
-                echi ' Sep 2 , 2019 , test'
+                echo ' Sep 2 , 2019 , test'
             }
         }
     }
